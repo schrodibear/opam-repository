@@ -37,8 +37,9 @@ tags: [
   "dataflow analysis"
 ]
 build: [
+  ["autoconf"]
   ["./configure" "--prefix" prefix "--sbindir=%{lib}%/frama-c/sbin" "--libexecdir=%{lib}%/frama-c/libexec" "--sysconfdir=%{lib}%/frama-c/etc" "--sharedstatedir=%{lib}%/frama-c/com" "--localstatedir=%{lib}%/frama-c/var" "--libdir=%{lib}%/frama-c/lib" "--includedir=%{lib}%/frama-c/include" "--datarootdir=%{lib}%/frama-c/share"]
-  [make]
+  [make "-j" jobs]
   [make "install"]
 ]
 depends: [
@@ -47,4 +48,8 @@ depends: [
   "conf-gtksourceview"
   "conf-gnomecanvas"
   "camlp4"
+]
+depexts: [
+  [["debian"] ["autoconf"]]
+  [["ubuntu"] ["autoconf"]]
 ]
