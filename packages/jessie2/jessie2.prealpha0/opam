@@ -1,0 +1,40 @@
+opam-version: "1"
+maintainer: "mandrykin@ispras.ru"
+authors: [
+  "Jean-Christophe Filliâtre"
+  "Claude Marché"
+  "Yannick Moy"
+  "Romain Bardou"
+]
+homepage: "http://krakatoa.lri.fr/"
+license: "GNU Lesser General Public License version 2.1"
+doc: ["http://krakatoa.lri.fr/#jessie"]
+tags: [
+  "deductive"
+  "program verification"
+  "specification"
+  "automated theorem prover"
+  "interactive theorem prover"
+  "Java"
+  "JML"
+  "C"
+  "ACSL"
+]
+build: [
+  ["autoconf"]
+  ["./configure" "--prefix" prefix]
+  [make "-j" jobs]
+  [make "install"]
+]
+depends: [
+  "why3" {>= "0.85.local"}
+  "frama-c" {= "20140301.local"}
+  "alt-ergo" {>= "0.95"}
+]
+depopts: [
+  "coq" {>= "8.4pl1"}
+]
+depexts: [
+  [["debian"] ["autoconf"]]
+  [["ubuntu"] ["autoconf"]]
+]
