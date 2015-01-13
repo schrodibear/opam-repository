@@ -19,7 +19,7 @@ tags: [
 ]
 build: [
   ["autoconf"]
-  ["./configure" "--prefix" prefix "--disable-bench" "--enable-plugins"]
+  ["./configure" "--prefix" prefix "--disable-bench"]
   [make "-j" jobs "opt" "plugins"]
   [make "install" "install-lib"]
 ]
