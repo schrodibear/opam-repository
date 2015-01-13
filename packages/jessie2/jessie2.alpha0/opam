@@ -27,9 +27,7 @@ build: [
   [make "install"]
 ]
 depends: [
-  "why3" {>= "0.85.local"}
   "frama-c" {= "20140301.local"}
-  "alt-ergo" {>= "0.95"}
 ]
 depopts: [
   "coq" {>= "8.4pl1"}

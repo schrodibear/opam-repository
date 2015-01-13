@@ -30,7 +30,7 @@ build-doc: [
 depends: [
   "alt-ergo"
   "lablgtk"    {>= "2.14.2"}
-  "menhir" {<= "20140422"}
+  "menhir"
   "conf-gtksourceview"
   "camlzip"
   "zarith"
