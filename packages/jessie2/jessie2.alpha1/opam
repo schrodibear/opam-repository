@@ -27,7 +27,7 @@ build: [
   [make "install"]
 ]
 depends: [
-  "frama-c" {= "20140301.local"}
+  "frama-c" {= "20140301.local" | = "20140301.local+import"}
 ]
 depopts: [
   "coq" {>= "8.4pl1"}
