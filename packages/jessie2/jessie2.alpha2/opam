@@ -22,7 +22,7 @@ tags: [
 ]
 build: [
   ["autoconf"]
-  ["./configure" "--prefix" prefix]
+  ["./configure" "--bindir" "%{prefix}%/bin" "--libdir" "%{prefix}%/lib"]
   [make "-j" jobs]
   [make "install"]
 ]
