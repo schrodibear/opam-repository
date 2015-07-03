@@ -1,13 +1,17 @@
-opam-version: "1"
-maintainer: "mandrykin@ispras.ru"
+opam-version: "1.2"
+name: "Jessie2"
+version: "alpha2"
+maintainer: "Mikhail Mandrykin <mandrykin@ispras.ru>"
 authors: [
   "Jean-Christophe Filliâtre"
   "Claude Marché"
   "Yannick Moy"
   "Romain Bardou"
+  "Mikhail Mandrykin"
 ]
 homepage: "http://krakatoa.lri.fr/"
 license: "GNU Lesser General Public License version 2.1"
+dev-repo: "https://forge.ispras.ru/git/astraver.jessie2.git"
 doc: ["http://krakatoa.lri.fr/#jessie"]
 tags: [
   "deductive"
@@ -22,16 +26,16 @@ tags: [
 ]
 build: [
   ["autoconf"]
-  ["./configure" "--bindir" "%{prefix}%/bin" "--libdir" "%{prefix}%/lib"]
+  ["./configure" "--prefix" prefix]
   [make "-j" jobs]
-  [make "install"]
 ]
+install: [make "install"]
 depends: [
   "frama-c" {= "20150201.local" }
   "why3" {= "0.86.local" }
 ]
 depopts: [
-  "coq" {>= "8.4pl1"}
+  "coq"
 ]
 depexts: [
   [["debian"] ["autoconf"]]

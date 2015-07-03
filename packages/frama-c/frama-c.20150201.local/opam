@@ -1,5 +1,7 @@
-opam-version: "1"
-maintainer: "mandrykin@ispras.ru"
+opam-version: "1.2"
+name: "Frama-C"
+version: "Sodium-20150201+astraver"
+maintainer: "Mikhail Mandrykin <mandrykin@ispras.ru>"
 authors: [
   "Patrick Baudin"
   "François Bobot"
@@ -21,7 +23,8 @@ authors: [
 ]
 homepage: "http://frama-c.com/"
 license: "GNU Lesser General Public License version 2.1"
-doc: ["http://frama-c.com/download/user-manual-Fluorine-20130601.pdf"]
+dev-repo: "https://forge.ispras.ru/git/astraver.frama-c.git"
+doc: ["http://frama-c.com/download/user-manual-Sodium-20150201.pdf"]
 tags: [
   "deductive"
   "program verification"
@@ -40,7 +43,12 @@ build: [
   ["autoconf"]
   ["./configure" "--prefix" prefix "--sbindir=%{lib}%/frama-c/sbin" "--libexecdir=%{lib}%/frama-c/libexec" "--sysconfdir=%{lib}%/frama-c/etc" "--sharedstatedir=%{lib}%/frama-c/com" "--localstatedir=%{lib}%/frama-c/var" "--libdir=%{lib}%/frama-c/lib" "--includedir=%{lib}%/frama-c/include" "--datarootdir=%{lib}%/frama-c/share"]
   [make "-j" jobs]
-  [make "install"]
+]
+install: [make "install"]
+remove: [
+  ["autoconf"]
+  ["./configure" "--prefix" prefix "--sbindir=%{lib}%/frama-c/sbin" "--libexecdir=%{lib}%/frama-c/libexec" "--sysconfdir=%{lib}%/frama-c/etc" "--sharedstatedir=%{lib}%/frama-c/com" "--localstatedir=%{lib}%/frama-c/var" "--libdir=%{lib}%/frama-c/lib" "--includedir=%{lib}%/frama-c/include" "--datarootdir=%{lib}%/frama-c/share"]
+  [make "uninstall"]
 ]
 depends: [
   "ocamlgraph" {>= "1.8.5"}
