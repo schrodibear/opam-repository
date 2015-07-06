@@ -1,6 +1,6 @@
 opam-version: "1.2"
-name: "Frama-C"
-version: "Sodium-20150201+astraver"
+name: "frama-c"
+version: "20150201.local"
 maintainer: "Mikhail Mandrykin <mandrykin@ispras.ru>"
 authors: [
   "Patrick Baudin"
