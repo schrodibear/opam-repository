@@ -1,6 +1,6 @@
 opam-version: "1.2"
 name: "frama-c"
-version: "20150201.local"
+version: "20150201+astraver"
 maintainer: "Mikhail Mandrykin <mandrykin@ispras.ru>"
 authors: [
   "Patrick Baudin"

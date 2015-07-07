@@ -31,8 +31,8 @@ build: [
 ]
 install: [make "install"]
 depends: [
-  "frama-c" {= "20150201.local" }
-  "why3" {= "0.86.local" }
+  "frama-c" {= "20150201+astraver" }
+  "why3" {= "0.86.1+astraver" }
 ]
 depopts: [
   "coq"
