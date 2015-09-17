@@ -22,7 +22,7 @@ tags: [
 ]
 build: [
   ["autoconf"]
-  ["./configure" "--prefix" prefix "--disable-bench"]
+  ["./configure" "--prefix" prefix "--disable-bench" "--disable-menhirLib"]
   [make "-j" jobs "opt" "plugins"]
 ]
 install: [make "install" "install-lib"]
