@@ -22,13 +22,13 @@ tags: [
 ]
 build: [
   ["autoconf"]
-  ["./configure" "--prefix" prefix "--disable-bench" "--disable-menhirLib" "--disable-coq-tactic"]
+  ["./configure" "--prefix" prefix]
   [make "-j" jobs "opt" "plugins"]
 ]
 install: [make "install" "install-lib"]
 remove: [
   ["autoconf"]
-  ["./configure" "--prefix" prefix "--disable-bench"]
+  ["./configure" "--prefix" prefix]
   [make "uninstall"]
 ]
 build-doc: [
