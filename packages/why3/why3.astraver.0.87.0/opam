@@ -1,6 +1,6 @@
 opam-version: "1.2"
 name: "why3"
-version: "0.86.1+astraver"
+version: "astraver.0.87.0"
 maintainer: "Mikhail Mandrykin <mandrykin@ispras.ru>"
 authors: [
   "François Bobot"
