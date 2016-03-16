@@ -22,7 +22,7 @@ tags: [
 ]
 build: [
   ["autoconf"]
-  ["./configure" "--prefix" prefix]
+  ["./configure" "--prefix" prefix "--disable-coq-tactic"]
   [make "-j" jobs "opt" "plugins"]
 ]
 install: [make "install" "install-lib"]
