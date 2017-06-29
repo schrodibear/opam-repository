@@ -22,6 +22,7 @@ tags: [
 ]
 build: [
   ["autoconf"]
+  ["automake --add-missing"]
   ["./configure" "--prefix" prefix]
   [make "-j" jobs "opt" "plugins"]
 ]
