@@ -24,7 +24,7 @@ tags: [
 build: [
   ["autoconf"]
   ["./automake.sh"]
-  ["./configure" "--prefix" prefix "--disable-coq-tactic" {coq <= "8.6"}]
+  ["./configure" "--prefix" prefix "--disable-coq-tactic" { !camlp5:installed | !coq:installed }]
   [make "-j" jobs]
 ]
 install: [make "install" "install-lib"]
