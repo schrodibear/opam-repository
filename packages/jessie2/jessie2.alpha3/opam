@@ -13,6 +13,7 @@ homepage: "http://krakatoa.lri.fr/"
 license: "GNU Lesser General Public License version 2.1"
 dev-repo: "https://forge.ispras.ru/git/astraver.jessie2.git"
 doc: ["http://krakatoa.lri.fr/#jessie"]
+bug-reports: "http://forge.ispras.ru/projects/astraver/issues"
 tags: [
   "deductive"
   "program verification"

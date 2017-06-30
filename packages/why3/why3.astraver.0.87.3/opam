@@ -13,6 +13,7 @@ homepage: "http://why3.lri.fr/"
 license: "GNU Lesser General Public License version 2.1"
 doc: ["http://why3.lri.fr/#documentation"]
 dev-repo: "https://forge.ispras.ru/git/astraver.why3.git"
+bug-reports: "http://forge.ispras.ru/projects/astraver/issues"
 tags: [
   "deductive"
   "program verification"
@@ -23,7 +24,7 @@ tags: [
 build: [
   ["autoconf"]
   ["./automake.sh"]
-  ["./configure" "--prefix" prefix]
+  ["./configure" "--prefix" prefix "--disable-coq-tactic" {coq <= "8.6"}]
   [make "-j" jobs]
 ]
 install: [make "install" "install-lib"]
