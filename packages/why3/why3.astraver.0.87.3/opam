@@ -30,6 +30,7 @@ build: [
 install: [make "install" "install-lib"]
 remove: [
   ["autoconf"]
+  ["./automake.sh"]
   ["./configure" "--prefix" prefix]
   [make "uninstall"]
 ]
