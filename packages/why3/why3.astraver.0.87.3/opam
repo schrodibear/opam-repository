@@ -51,6 +51,6 @@ depopts: [
   "coq"
 ]
 depexts: [
-  [["debian"] ["autoconf"]]
-  [["ubuntu"] ["autoconf"]]
+  [["debian"] ["autoconf" "automake"]]
+  [["ubuntu"] ["autoconf" "automake"]]
 ]
