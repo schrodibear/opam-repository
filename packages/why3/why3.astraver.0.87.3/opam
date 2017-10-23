@@ -53,4 +53,5 @@ depopts: [
 depexts: [
   [["debian"] ["autoconf" "automake"]]
   [["ubuntu"] ["autoconf" "automake"]]
+  [["homebrew" "osx"] ["autoconf" "automake"]]
 ]
