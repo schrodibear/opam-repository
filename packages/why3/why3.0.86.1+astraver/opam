@@ -48,7 +48,7 @@ depopts: [
   "coq"
 ]
 conflicts: [
-  "coq" {>= 0.87}
+  "coq" {>= "0.87"}
 ]
 depexts: [
   [["debian"] ["autoconf"]]
