@@ -45,7 +45,10 @@ depends: [
 ]
 depopts: [
   "ocamlgraph"
-  "coq" {< "8.7"}
+  "coq"
+]
+conflicts: [
+  "coq" {>= 0.87}
 ]
 depexts: [
   [["debian"] ["autoconf"]]
