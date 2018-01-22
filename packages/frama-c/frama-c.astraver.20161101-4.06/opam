@@ -65,7 +65,7 @@ remove: [
   [make "uninstall"]
 ]
 depends: [
-  "ocaml" {>= "4.05.0" & < "4.06.0"}
+  "ocaml" {>= "4.06.0" & < "4.07.0"}
   "ocamlgraph" {>= "1.8.5"}
   "ocamlfind"
   "num"

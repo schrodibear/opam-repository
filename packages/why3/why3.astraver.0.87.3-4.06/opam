@@ -30,7 +30,6 @@ build: [
 install: [make "install" "install-lib"]
 remove: [
   ["autoconf"]
-  ["./automake.sh"]
   ["./configure" "--prefix" prefix]
   [make "uninstall"]
 ]
@@ -39,7 +38,7 @@ build-doc: [
   [make "DOCDIR=%{doc}%/why3" "install-doc"]
 ]
 depends: [
-  "ocaml" {>= "4.05.0" & < "4.06.0"}
+  "ocaml" {>= "4.06.0" & < "4.07.0"}
   "alt-ergo"
   "lablgtk"    {>= "2.14.2"}
   "menhir"
@@ -52,7 +51,6 @@ depopts: [
   "coq" {< "8.7"}
 ]
 depexts: [
-  [["debian"] ["autoconf" "automake"]]
-  [["ubuntu"] ["autoconf" "automake"]]
-  [["homebrew" "osx"] ["autoconf" "automake"]]
+  [["debian"] ["autoconf"]]
+  [["ubuntu"] ["autoconf"]]
 ]
