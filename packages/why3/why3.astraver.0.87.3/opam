@@ -39,7 +39,6 @@ build-doc: [
   [make "DOCDIR=%{doc}%/why3" "install-doc"]
 ]
 depends: [
-  "ocaml" {>= "4.05.0" & < "4.06.0"}
   "alt-ergo"
   "lablgtk"    {>= "2.14.2"}
   "menhir"
@@ -47,6 +46,7 @@ depends: [
   "camlzip"
   "zarith"
 ]
+available: [ ocaml-version >= "4.05.0" & < "4.06.0" ]
 depopts: [
   "ocamlgraph"
   "coq"
