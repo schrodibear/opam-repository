@@ -28,7 +28,7 @@ tags: [
 build: [
   ["autoconf"]
   ["./configure" "--prefix" prefix]
-  [make "-j" jobs]
+  [make "-j1"]
 ]
 install: [make "install"]
 depends: [
