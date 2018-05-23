@@ -55,7 +55,7 @@ conflicts: [
   "coq" {>= "8.7"}
 ]
 depexts: [
-  [["debian"] ["autoconf"] ["automake"]]
-  [["ubuntu"] ["autoconf"] ["automake"]]
-  [["fedora"] ["autoconf"] ["automake"]]
+  [["debian"] ["autoconf" "automake"]]
+  [["ubuntu"] ["autoconf" "automake"]]
+  [["fedora"] ["autoconf" "automake"]]
 ]
