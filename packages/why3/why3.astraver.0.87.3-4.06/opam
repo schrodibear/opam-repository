@@ -30,6 +30,7 @@ build: [
 install: [make "install" "install-lib"]
 remove: [
   ["autoconf"]
+  ["./automake.sh"]
   ["./configure" "--prefix" prefix]
   [make "uninstall"]
 ]
@@ -54,6 +55,7 @@ conflicts: [
   "coq" {>= "8.7"}
 ]
 depexts: [
-  [["debian"] ["autoconf"]]
-  [["ubuntu"] ["autoconf"]]
+  [["debian"] ["autoconf"] ["automake"]]
+  [["ubuntu"] ["autoconf"] ["automake"]]
+  [["fedora"] ["autoconf"] ["automake"]]
 ]
