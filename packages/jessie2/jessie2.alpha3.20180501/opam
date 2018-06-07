@@ -32,7 +32,7 @@ build: [
 ]
 install: [make "install"]
 depends: [
-  "frama-c" {>= "astraver.20161101" }
+  "frama-c" {>= "astraver.20180501" }
   "why3" {>= "astraver.0.87.3" }
 ]
 depopts: [
