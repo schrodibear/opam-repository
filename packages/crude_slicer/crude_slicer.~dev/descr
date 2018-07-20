@@ -1,0 +1,6 @@
+Reachability slicer based on context-sensitive flow-insensitive separation analysis with typed polymorphic
+regions and dependency analysis with transitive closures. Intended to be used with a reachability verifier
+e.g. CPAchecker, Ultimate Automizer, CBMC, for verification tasks prepared from Linux device drivers.
+The slicing is performed modulo termination.
+So the slicer works under assumption that all the code
+(except for explicitly specified functions) necessary terminates and thus can be removed if it doesn't influence reachability.
