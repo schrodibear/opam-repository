@@ -1,0 +1,44 @@
+opam-version: "1.2"
+name: "jessie2"
+version: "alpha3"
+maintainer: "Mikhail Mandrykin <mandrykin@ispras.ru>"
+authors: [
+  "Jean-Christophe Filliâtre"
+  "Claude Marché"
+  "Yannick Moy"
+  "Romain Bardou"
+  "Mikhail Mandrykin"
+]
+homepage: "http://krakatoa.lri.fr/"
+license: "GNU Lesser General Public License version 2.1"
+dev-repo: "https://forge.ispras.ru/git/astraver.jessie2.git"
+doc: ["http://krakatoa.lri.fr/#jessie"]
+bug-reports: "http://forge.ispras.ru/projects/astraver/issues"
+tags: [
+  "deductive"
+  "program verification"
+  "specification"
+  "automated theorem prover"
+  "interactive theorem prover"
+  "Java"
+  "JML"
+  "C"
+  "ACSL"
+]
+build: [
+  ["autoconf"]
+  ["./configure" "--prefix" prefix]
+  [make "-j1"]
+]
+install: [make "install"]
+depends: [
+  "frama-c" {>= "astraver.20180501" }
+  "why3" {>= "astraver.0.87.3" }
+]
+depopts: [
+  "coq"
+]
+depexts: [
+  [["debian"] ["autoconf"]]
+  [["ubuntu"] ["autoconf"]]
+]
