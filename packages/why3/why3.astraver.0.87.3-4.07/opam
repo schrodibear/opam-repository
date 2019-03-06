@@ -46,7 +46,7 @@ depends: [
   "camlzip"
   "zarith"
 ]
-available: [ ocaml-version >= "4.06.0" & ocaml-version < "4.07.0" ]
+available: [ ocaml-version >= "4.06.0" & ocaml-version <= "4.07.1" ]
 depopts: [
   "ocamlgraph"
   "coq"
