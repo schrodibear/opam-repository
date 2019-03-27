@@ -1,6 +1,4 @@
-opam-version: "1.2"
-name: "why3"
-version: "astraver.0.87.3"
+opam-version: "2.0"
 maintainer: "Mikhail Mandrykin <mandrykin@ispras.ru>"
 authors: [
   "François Bobot"
@@ -9,11 +7,7 @@ authors: [
   "Guillaume Melquiond"
   "Andrei Paskevich"
 ]
-homepage: "http://why3.lri.fr/"
 license: "GNU Lesser General Public License version 2.1"
-doc: ["http://why3.lri.fr/#documentation"]
-dev-repo: "https://forge.ispras.ru/git/astraver.why3.git"
-bug-reports: "http://forge.ispras.ru/projects/astraver/issues"
 tags: [
   "deductive"
   "program verification"
@@ -21,42 +15,72 @@ tags: [
   "automated theorem prover"
   "interactive theorem prover"
 ]
+homepage: "http://why3.lri.fr/"
+doc: "http://why3.lri.fr/#documentation"
+bug-reports: "http://forge.ispras.ru/projects/astraver/issues"
+depends: [
+  "ocaml" {>= "4.06.0" & <= "4.07.1"}
+  "alt-ergo"
+  "lablgtk" {>= "2.14.2"}
+  "menhir"
+  "conf-gtksourceview"
+  "camlzip"
+  "zarith"
+]
+depopts: ["ocamlgraph" "coq"]
+conflicts: [
+  "coq" {>= "8.7"}
+]
 build: [
   ["autoconf"]
   ["./automake.sh"]
-  ["./configure" "--prefix" prefix "--disable-coq-tactic" { !camlp5:installed | !coq:installed }]
+  [
+    "./configure"
+    "--prefix"
+    prefix
+    "--disable-coq-tactic" {!camlp5:installed | !coq:installed}
+  ]
   [make "-j" jobs]
+  [make "doc" "stdlibdoc" "apidoc"] {with-doc}
 ]
-install: [make "install" "install-lib"]
+install: [
+  [make "install" "install-lib"]
+  [make "DOCDIR=%{doc}%/why3" "install-doc"] {with-doc}
+]
 remove: [
   ["autoconf"]
   ["./automake.sh"]
   ["./configure" "--prefix" prefix]
   [make "uninstall"]
 ]
-build-doc: [
-  [make "doc" "stdlibdoc" "apidoc"]
-  [make "DOCDIR=%{doc}%/why3" "install-doc"]
-]
-depends: [
-  "alt-ergo"
-  "lablgtk"    {>= "2.14.2"}
-  "menhir"
-  "conf-gtksourceview"
-  "camlzip"
-  "zarith"
-]
-available: [ ocaml-version >= "4.06.0" & ocaml-version <= "4.07.1" ]
-depopts: [
-  "ocamlgraph"
-  "coq"
-]
-conflicts: [
-  "coq" {>= "8.7"}
-]
 depexts: [
-  [["debian"] ["autoconf" "automake"]]
-  [["ubuntu"] ["autoconf" "automake"]]
-  [["homebrew" "osx"] ["autoconf" "automake"]]
-  [["fedora"] ["autoconf" "automake"]]
+  ["autoconf" "automake"] {os-distribution = "debian"}
+  ["autoconf" "automake"] {os-distribution = "ubuntu"}
+  ["autoconf" "automake"] {os-distribution = "homebrew" & os = "macos"}
+  ["autoconf" "automake"] {os-distribution = "fedora"}
 ]
+dev-repo: "git+https://forge.ispras.ru/git/astraver.why3.git"
+synopsis:"Why3 is a platform for deductive program verification"
+description:"""
+It provides a rich language for specification and programming, called
+WhyML, and relies on external theorem provers, both automated and
+interactive, to discharge verification conditions. Why3 comes with a
+standard library of logical theories (integer and real arithmetic,
+Boolean operations, sets and maps, etc.) and basic programming data
+structures (arrays, queues, hash tables, etc.). A user can write WhyML
+programs directly and get correct-by-construction OCaml programs
+through an automated extraction mechanism. WhyML is also used as an
+intermediate language for the verification of C, Java, or Ada
+programs.
+
+Why3 is a complete reimplementation of the former Why platform. Among
+the new features are: numerous extensions to the input language, a new
+architecture for calling external provers, and a well-designed API,
+allowing to use Why3 as a software library. An important emphasis is
+put on modularity and genericity, giving the end user a possibility to
+easily reuse Why3 formalizations or to add support for a new external
+prover if wanted.
+"""
+url {
+  git: "https://forge.ispras.ru/git/astraver.why3.git#bv_and_lemma_functions_stable-4.07"
+}

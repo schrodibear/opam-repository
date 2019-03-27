@@ -1,14 +1,13 @@
-opam-version: "1.2"
-name: "astraver"
-version: "1.0"
+opam-version: "2.0"
 maintainer: "Mikhail Mandrykin <mandrykin@ispras.ru>"
 authors: [
   "Mikhail Mandrykin"
+  "Jean-Christophe Filliâtre"
+  "Claude Marché"
+  "Yannick Moy"
+  "Romain Bardou"
 ]
-homepage: "http://linuxtesting.org/astraver"
 license: "GNU Lesser General Public License version 2.1"
-dev-repo: "https://forge.ispras.ru/git/astraver.git"
-bug-reports: "http://forge.ispras.ru/projects/astraver/issues"
 tags: [
   "deductive"
   "program verification"
@@ -18,21 +17,35 @@ tags: [
   "C"
   "ACSL"
 ]
+homepage: "http://linuxtesting.org/astraver"
+bug-reports: "http://forge.ispras.ru/projects/astraver/issues"
+depends: [
+  "ocaml"
+  "frama-c" {>= "astraver.v18.0"}
+  "why3" {>= "astraver.0.87.3"}
+]
+depopts: ["coq"]
 build: [
   ["autoconf"]
   ["./configure" "--prefix" prefix]
   [make "-j1"]
 ]
 install: [make "install"]
-depends: [
-  "frama-c" {>= "astraver.20180501" }
-  "why3" {>= "astraver.0.87.3" }
-]
-depopts: [
-  "coq"
-]
 depexts: [
-  [["debian"] ["autoconf"]]
-  [["ubuntu"] ["autoconf"]]
-  [["fedora"] ["autoconf"]]
+  ["autoconf"] {os-distribution = "debian"}
+  ["autoconf"] {os-distribution = "ubuntu"}
+  ["autoconf"] {os-distribution = "fedora"}
 ]
+dev-repo: "git+https://forge.ispras.ru/git/astraver.git"
+synopsis:"AstraVer deductive verification plugin for Frama-C"
+description:"""
+AstraVer is a successor of the Jessie plug-in that allows deductive verification
+of C programs annotated with ACSL and is primarily targeted at
+Linux kernel modules source code. It uses the language and tools
+of the Why3 platform (http://why3.lri.fr/). Unlike original Jessie,
+AstraVer is not a part of the Why2 certification platform
+and is compiled/installed separately.
+"""
+url {
+  git: "https://forge.ispras.ru/git/astraver.git#18.0"
+}
