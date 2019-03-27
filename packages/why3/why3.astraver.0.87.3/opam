@@ -29,7 +29,7 @@ depends: [
 ]
 depopts: ["ocamlgraph" "coq"]
 conflicts: [
-  "coq" {>= "8.7"}
+  "coq" {> "8.9"}
 ]
 build: [
   ["autoconf"]
