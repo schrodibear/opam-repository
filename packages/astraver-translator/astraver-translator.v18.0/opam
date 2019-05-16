@@ -21,15 +21,16 @@ homepage: "http://linuxtesting.org/astraver"
 bug-reports: "http://forge.ispras.ru/projects/astraver/issues"
 depends: [
   "ocaml"
-  "frama-c" {>= "astraver.v18.0"}
-  "astraver-translator" {= "v18.0"}
+  "why3" {>= "astraver.0.87.3"}
 ]
+depopts: ["coq"]
 build: [
   ["autoconf"]
   ["./configure" "--prefix" prefix]
-  [make "frama-c-plugin"]
+  ["./touch.sh"]
+  [make "all-witout-frama-c-plugin"]
 ]
-install: [make "install-frama-c-plugin"]
+install: [make "install-all-witout-frama-c-plugin"]
 depexts: [
   ["autoconf"] {os-distribution = "debian"}
   ["autoconf"] {os-distribution = "ubuntu"}
