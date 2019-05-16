@@ -28,9 +28,9 @@ build: [
   ["autoconf"]
   ["./configure" "--prefix" prefix]
   ["./touch.sh"]
-  [make "all-witout-frama-c-plugin"]
+  [make "all-without-frama-c-plugin"]
 ]
-install: [make "install-all-witout-frama-c-plugin"]
+install: [make "install-all-without-frama-c-plugin"]
 depexts: [
   ["autoconf"] {os-distribution = "debian"}
   ["autoconf"] {os-distribution = "ubuntu"}
