@@ -20,7 +20,9 @@ tags: [
 homepage: "http://linuxtesting.org/astraver"
 bug-reports: "http://forge.ispras.ru/projects/astraver/issues"
 depends: [
-  "ocaml"
+  "ocaml" {>= "4.07"}
+  "num"
+  "ocamlgraph"
   "why3" {>= "astraver.0.87.3"}
 ]
 depopts: ["coq"]
